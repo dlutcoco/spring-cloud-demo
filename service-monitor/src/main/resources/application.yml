@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: monitor-service
+  boot:
+    admin:
+      routes:
+        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,hystrix.stream
+  
+server:
+  port: 8050
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true

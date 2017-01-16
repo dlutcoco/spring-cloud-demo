@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 5555
+  
+zuul:
+  routes:
+    api-pva:
+      path: /pva/**
+      serviceId: pva-service
+    api-pvd:
+      path: /pvd/**
+      serviceId: pvd-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
