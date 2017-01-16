@@ -2,7 +2,6 @@ package com.netposa.cloud.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
@@ -16,7 +15,6 @@ import com.netposa.cloud.gateway.filter.AccessFilter;
 
 @SpringCloudApplication
 @EnableZuulProxy
-@EnableCircuitBreaker
 public class GatewayApplication {
 
 	public static void main(String[] args) {
