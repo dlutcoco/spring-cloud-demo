@@ -5,7 +5,9 @@ import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
+import com.netposa.cloud.gateway.fallback.MyFallbackProvider;
 import com.netposa.cloud.gateway.filter.AccessFilter;
+import com.netposa.cloud.gateway.filter.ErrorFilter;
 
 /**
  * @author dlut_coco@126.com
@@ -24,5 +26,15 @@ public class GatewayApplication {
 	@Bean
 	public AccessFilter accessFilter() {
 		return new AccessFilter();
+	}
+	
+	@Bean
+	public ErrorFilter errorFilter() {
+	    return new ErrorFilter();
+	}
+	
+	@Bean
+	public MyFallbackProvider myFallbackProvider() {
+	    return new MyFallbackProvider();
 	}
 }
